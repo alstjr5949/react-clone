@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import CommonCont from "./common/CommonCont";
 
-const StyledHeader = styled.header`
+const NavHeader = styled.header`
   width: 100%;
   position: fixed;
   top: 0;
@@ -16,7 +16,7 @@ const HeaderWrapper = styled(CommonCont)`
   align-items: center;
 `;
 
-const HomeLogo = styled.h1`
+const HomeLogo = styled(Link)`
   width: 140px;
   display: flex;
   align-items: center;
@@ -74,9 +74,9 @@ const Github = styled.a``;
 
 const Header = () => {
   return (
-    <StyledHeader>
+    <NavHeader>
       <HeaderWrapper>
-        <HomeLogo>React</HomeLogo>
+        <HomeLogo to="/">React</HomeLogo>
         <Nav>
           <NavListBox>
             <NavList>
@@ -100,7 +100,7 @@ const Header = () => {
           <Github>Github</Github>
         </RemainBtnCont>
       </HeaderWrapper>
-    </StyledHeader>
+    </NavHeader>
   );
 };
 
