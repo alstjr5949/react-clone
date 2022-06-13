@@ -1,6 +1,6 @@
 import reactIcon from "../imgs/react-icon.svg";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import CommonCont from "./common/CommonCont";
 
 const NavHeader = styled.header`
@@ -49,7 +49,23 @@ const NavListBox = styled.ul`
 `;
 
 const NavList = styled.li`
-  padding: 0 10px;
+  padding: 22px 10px;
+  position: relative;
+`;
+
+const StyledLink = styled(Link)`
+  height: 100px;
+  padding-top: 1px;
+  color: #61dafb;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background-color: #61dafb;
+  }
 `;
 
 const SearchIcon = styled.button`
@@ -73,6 +89,10 @@ const Lang = styled.a``;
 const Github = styled.a``;
 
 const Header = () => {
+  const documentMatch = useMatch("/document");
+  const tutorialMatch = useMatch("/tutorial");
+  const blogMatch = useMatch("/blog");
+  const communityMatch = useMatch("/community");
   return (
     <NavHeader>
       <HeaderWrapper>
@@ -80,16 +100,32 @@ const Header = () => {
         <Nav>
           <NavListBox>
             <NavList>
-              <Link to="/document">문서</Link>
+              {documentMatch ? (
+                <StyledLink to="/document">문서</StyledLink>
+              ) : (
+                <Link to="/document">문서</Link>
+              )}
             </NavList>
             <NavList>
-              <Link to="/tutorial">자습서</Link>
+              {tutorialMatch ? (
+                <StyledLink to="/tutorial">자습서</StyledLink>
+              ) : (
+                <Link to="/tutorial">자습서</Link>
+              )}
             </NavList>
             <NavList>
-              <Link to="/blog">블로그</Link>
+              {blogMatch ? (
+                <StyledLink to="/blog">블로그</StyledLink>
+              ) : (
+                <Link to="/blog">블로그</Link>
+              )}
             </NavList>
             <NavList>
-              <Link to="/community">커뮤니티</Link>
+              {communityMatch ? (
+                <StyledLink to="/community">커뮤니티</StyledLink>
+              ) : (
+                <Link to="/community">커뮤니티</Link>
+              )}
             </NavList>
           </NavListBox>
         </Nav>
