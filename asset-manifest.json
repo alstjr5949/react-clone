@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/react-clone/static/js/main.f00b7caa.js",
+    "index.html": "/react-clone/index.html",
+    "static/media/react-icon.svg": "/react-clone/static/media/react-icon.928f956d9c8ebcffb98a8e917154a81a.svg",
+    "main.f00b7caa.js.map": "/react-clone/static/js/main.f00b7caa.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f00b7caa.js"
+  ]
+}
